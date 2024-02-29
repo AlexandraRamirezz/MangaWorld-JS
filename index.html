@@ -34,6 +34,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
+  <!-- Toastify CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -81,7 +84,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title"><i class="fa-solid fa-cart-shopping"></i>
-                    <h5 class="px-3">Shopping Cart</h5>
+                    <h5 class="px-3">Shopping cart</h5>
                   </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -141,11 +144,11 @@
               <div class="form-group card-body-design div-size-sort">
                 <label for="selectSortBy">Sort by :</label>
                 <select class="form-control" id="selectSortBy" multiple>
+                  <option value="deleteSorting" class="design-delete">Delete sorting</option>
                   <option value="higherPrices">Higher prices</option>
                   <option value="lowerPrices">Lower prices</option>
                   <option value="bestSeller">Best seller</option>
                   <option value="lowStock">Low stock</option>
-                  <option value="deleteSorting">Delete sorting</option>
                 </select>
               </div>
 
@@ -153,6 +156,7 @@
               <div class="form-group card-body-design ">
                 <label for="selectCategory">Categories :</label>
                 <select class="form-control" id="selectCategory" multiple>
+                  <option value="Uncategorized" class="design-delete">Uncategorized</option>
                   <option value="Sports">Sports</option>
                   <option value="Romance">Romance</option>
                   <option value="Action">Action</option>
@@ -160,7 +164,6 @@
                   <option value="Horror">Horror</option>
                   <option value="Escolar">Escolar</option>
                   <option value="Drama">Drama</option>
-                  <option value="Uncategorized">Uncategorized</option>
                 </select>
               </div>
 
@@ -249,11 +252,17 @@
     </div>
   </footer>
 
-    <!-- AOS JS -->
+  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+  <!-- Toastify JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -261,7 +270,6 @@
     crossorigin="anonymous"></script>
 
   <!-- JS -->
-  <script src="js/data.js" defer></script>
   <script src="js/Cart.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
