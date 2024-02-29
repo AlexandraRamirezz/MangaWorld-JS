@@ -21,8 +21,10 @@ cartCount.innerText = cart.getCount();
 
 inputSearch.addEventListener('input', (event) => {
     const search = event.target.value;
-    const newList = comics.filter((comic) => comic.name.toLowerCase().includes(search.toLowerCase()));
-    renderComics(newList);
+    let filteredList = comics_list.filter((comic) => comic.name.toLowerCase().includes(search));
+    filteredList = applyCurrentFilters(filteredList);
+
+    renderComics(filteredList);
 });
 
 btnModalShoppingCart.addEventListener('click', function () {
@@ -183,12 +185,15 @@ function validatePrices() {
 }
 
 function applyFilters() {
+    const search = inputSearch.value.trim().toLowerCase();
     const sortBy = selectSortBy.value;
     const selectedCategories = Array.from(selectCategory.selectedOptions, option => option.value);
     const minimumPrice = parseFloat(document.getElementById('minimumPrice').value) || 0;
     const maximumPrice = parseFloat(document.getElementById('maximumPrice').value) || Number.MAX_VALUE;
 
     let filteredList = comics_list.slice();
+
+    filteredList = filteredList.filter((comic) => comic.name.toLowerCase().includes(search));
 
     filteredList = filteredList.filter((comic) => {
         if (selectedCategories.includes("Uncategorized")) {
@@ -220,6 +225,38 @@ function applyFilters() {
     }
 
     renderComics(filteredList);
+}
+
+function applyCurrentFilters(comics) {
+    const sortBy = selectSortBy.value;
+    const selectedCategories = Array.from(selectCategory.selectedOptions, option => option.value);
+    const minimumPrice = parseFloat(document.getElementById('minimumPrice').value) || 0;
+    const maximumPrice = parseFloat(document.getElementById('maximumPrice').value) || Number.MAX_VALUE;
+
+    let filteredList = comics.filter((comic) => {
+        const categoryMatches = selectedCategories.length === 0 || selectedCategories.includes(comic.category);
+        const priceInRange = comic.price >= minimumPrice && comic.price <= maximumPrice;
+
+        return categoryMatches && priceInRange;
+    });
+
+    switch (sortBy) {
+        case "higherPrices":
+            filteredList.sort((a, b) => b.price - a.price);
+            break;
+        case "lowerPrices":
+            filteredList.sort((a, b) => a.price - b.price);
+            break;
+        case "bestSeller":
+            filteredList = filteredList.filter(comic => comic.popular);
+            break;
+        case "lowStock":
+            filteredList = filteredList.filter(comic => comic.stock < 5);
+            filteredList.sort((a, b) => a.stock - b.stock);
+            break;
+    }
+
+    return filteredList;
 }
 
 btnApplyFilters.addEventListener('click', function (event) {
