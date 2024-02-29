@@ -157,13 +157,6 @@ main {
     position: relative;
 }
 
-.img-carousel {
-    background-size: cover;
-    height: 520px;
-    height: calc(100vh -60%);
-    object-fit: cover;
-}
-
 .card-title {
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
