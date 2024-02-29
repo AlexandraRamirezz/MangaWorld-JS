@@ -38,6 +38,31 @@ btnClose.addEventListener('click', () => {
     modal.hide();
 })
 
+btnConfirm.addEventListener('click', () => {
+    if (cart.getCount() > 0) {
+        setTimeout(() => {
+            Swal.fire({
+                title: "Purchase successfully",
+                icon: "success",
+                showConfirmButton: false,
+                html: "Shopping cart comics coming to you soon.",
+                timer: 3000
+            });
+        }, 1000);
+        modal.hide();
+        cart.clearCart();
+        updateCartInfo();
+    } else {
+        Swal.fire({
+            title: "Error",
+            text: "No comics in the shopping cart.",
+            icon: "error",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+})
+
 const renderComics = (list) => {
     listComics.innerHTML = '';
 
