@@ -11,6 +11,9 @@ const selectCategory = document.querySelector('#selectCategory');
 const btnClose = document.querySelector('#btnClose');
 const btnConfirm = document.querySelector('#btnConfirm');
 const btnApplyFilters = document.querySelector('#btnApplyFilters');
+
+let comics_list = [];
+
 const listShoppingCart = JSON.parse(localStorage.getItem('cart')) || [];
 const cart = new Cart(listShoppingCart);
 
@@ -67,7 +70,6 @@ const renderComics = (list) => {
     });
 };
 
-
 const calculateDiscount = (total) => {
     let discountText = '';
 
@@ -101,10 +103,19 @@ const updateCartInfo = () => {
 
 const addToShoppingCart = (e) => {
     const id = e.target.id;
-    const comic = comics.find(item => item.id == id);
-    console.table(comic);
+    const comic = comics_list.find(item => item.id == id);
     cart.addToShoppingCart(comic);
     updateCartInfo();
+
+    Toastify({
+        close: true,
+        text: "Comic added to shopping cart  ",
+        gravity: 'bottom',
+        duration: 3000,
+        style: {
+            background: "linear-gradient(to right, #FF8787, #ffa16b)",
+        },
+    }).showToast();
 }
 
 const removeFromShoppingCart = (e) => {
@@ -152,7 +163,7 @@ function applyFilters() {
     const minimumPrice = parseFloat(document.getElementById('minimumPrice').value) || 0;
     const maximumPrice = parseFloat(document.getElementById('maximumPrice').value) || Number.MAX_VALUE;
 
-    let filteredList = comics.slice();
+    let filteredList = comics_list.slice();
 
     filteredList = filteredList.filter((comic) => {
         if (selectedCategories.includes("Uncategorized")) {
@@ -191,6 +202,27 @@ btnApplyFilters.addEventListener('click', function (event) {
     applyFilters();
 });
 
-applyFilters();
-updateCartInfo();
-renderComics(comics);
+const getComics = async () => {
+    try {
+        const endPoint = 'db.json';
+        const resp = await fetch(endPoint);
+        const json = await resp.json();
+        const comics = json.comics;
+        comics_list = comics;
+        applyFilters();
+        updateCartInfo();
+        renderComics(comics);
+
+    } catch (error) {
+        Swal.fire({
+            title: "Error",
+            html: 'An error occurred while displaying the comics at this time. Please try again later.',
+            icon: "error",
+            showConfirmButton: false,
+            timer: 3000
+        });
+        console.log(error);
+    }
+}
+
+getComics();
