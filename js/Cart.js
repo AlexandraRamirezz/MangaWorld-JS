@@ -3,11 +3,11 @@ class Cart {
         this.cart = list;
     }
 
-    addToShoppingCart({ id, name, img, price }) {
+    addToShoppingCart({ id, name, price }) {
         const index = this.cart.findIndex(comic => comic.id == id);
 
         if (index == -1) {
-            this.cart.push({ id, name, img, price, units: 1 });
+            this.cart.push({ id, name, price, units: 1 });
         } else {
             this.cart[index].units += 1;
         }
@@ -37,5 +37,10 @@ class Cart {
             this.cart.splice(index, 1);
             localStorage.setItem('cart', JSON.stringify(this.cart));
         }
+    }
+
+    clearCart() {
+        this.cart = [];
+        localStorage.removeItem('cart');
     }
 }
