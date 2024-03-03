@@ -11,7 +11,7 @@
         },
         {
             "id": 2,
-            "name": "GIVEN, VOL. 2",
+            "name": "GIVEN, VOL 02",
             "category": "Romance",
             "price": 41.30,
             "stock": 6,
@@ -20,7 +20,7 @@
         },
         {
             "id": 3,
-            "name": "GUARDIANES DE LA NOCHE, VOL. 12",
+            "name": "DEMON SLAYER, VOL 12",
             "category": "Action",
             "price": 55.70,
             "stock": 15,
@@ -47,7 +47,7 @@
         },
         { 
             "id": 6,
-            "name": "EN LA MISMA CLASE 02",
+            "name": "DOUKYUUSEI, VOL 01",
             "category": "Escolar",
             "price": 28.50,
             "stock": 3,
@@ -56,8 +56,8 @@
         },
         { 
             "id": 7,
-            "name": "ORANGE, VOL. 1",
-            "category": "Romance",
+            "name": "ORANGE, VOL 01",
+            "category": "Escolar",
             "price": 39.99,
             "stock": 4,
             "img": "img/card7.jpg",
@@ -71,6 +71,78 @@
             "stock": 15,
             "img": "img/card8.jpg",
             "popular": true
+        },
+        { 
+            "id": 9,
+            "name": "MASHLE 01",
+            "category": "Comedy",
+            "price": 49.00,
+            "stock": 8,
+            "img": "img/card9.png",
+            "popular": false
+        },
+        { 
+            "id": 10,
+            "name": "FULLMETAL ALCHEMIST KANZENBAN 01",
+            "category": "Action",
+            "price": 35.50,
+            "stock": 4,
+            "img": "img/card10.png",
+            "popular": false
+        },
+        { 
+            "id": 11,
+            "name": "TOKYO REVENGERS 01",
+            "category": "Drama",
+            "price": 105.00,
+            "stock": 12,
+            "img": "img/card11.png",
+            "popular": true
+        },
+        { 
+            "id": 12,
+            "name": "WOTAKU NI KOI WA MUZUKASHII 01",
+            "category": "Romance",
+            "price": 64.00,
+            "stock": 8,
+            "img": "img/card12.jpg",
+            "popular": false
+        },
+        { 
+            "id": 13,
+            "name": "NARUTO, VOL 41",
+            "category": "Action",
+            "price": 40.00,
+            "stock": 3,
+            "img": "img/card13.jpg",
+            "popular": false
+        },
+        { 
+            "id": 14,
+            "name": "HAIKYU!!, VOL 12",
+            "category": "Sports",
+            "price": 40.00,
+            "stock": 6,
+            "img": "img/card14.jpg",
+            "popular": true
+        },
+        { 
+            "id": 15,
+            "name": "KAKEGURUI, VOL 14",
+            "category": "Horror",
+            "price": 64.99,
+            "stock": 6,
+            "img": "img/card15.jpg",
+            "popular": false
+        },
+        { 
+            "id": 16,
+            "name": "SEXY COSPLAY DOLL 01",
+            "category": "Romance",
+            "price": 57.00,
+            "stock": 11,
+            "img": "img/card16.png",
+            "popular": false
         }
     ]
 }
