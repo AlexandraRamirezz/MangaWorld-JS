@@ -46,6 +46,7 @@ btnConfirm.addEventListener('click', () => {
             Swal.fire({
                 title: "Purchase successfully",
                 icon: "success",
+                iconColor: '#8da498',
                 showConfirmButton: false,
                 html: "Shopping cart comics coming to you soon.",
                 timer: 3000
@@ -59,6 +60,7 @@ btnConfirm.addEventListener('click', () => {
             title: "Error",
             text: "No comics in the shopping cart.",
             icon: "error",
+            iconColor: '#FF8787',
             showConfirmButton: false,
             timer: 1500
         });
@@ -111,7 +113,7 @@ const calculateDiscount = (total) => {
         discountText = `<h6 class="text-end px-5 discount-design">15% discount : - S/ ${discountAmount.toFixed(2)}</h6>`;
         discountText += `<hr><h6 class="text-end px-5">Discounted total : S/ ${discountedTotal.toFixed(2)}</h6>`;
     } else {
-        discountText = '<h6 class="text-end px-5" style="font-size:14px">No hay descuento aplicable</h6>';
+        discountText = '<h6 class="text-end px-5" style="font-size:14px">No discount applicable</h6>';
     }
 
     return discountText;
@@ -140,7 +142,7 @@ const addToShoppingCart = (e) => {
         gravity: 'bottom',
         duration: 3000,
         style: {
-            background: "linear-gradient(to right, #FF8787, #ffa16b)",
+            background: "linear-gradient(to right, #FF8787, #8da498)",
         },
     }).showToast();
 }
@@ -280,6 +282,7 @@ const getComics = async () => {
             title: "Error",
             html: 'An error occurred while displaying the comics at this time. Please try again later.',
             icon: "error",
+            iconColor: '#FF8787',
             showConfirmButton: false,
             timer: 3000
         });

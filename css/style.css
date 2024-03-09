@@ -367,12 +367,12 @@ p {
 .btnAddComic {
     margin: 15px;
     border: #8e7d7d solid 1px;
-    
 }
 
 .btnAddComic:hover {
-    background-color:#938484 !important;
+    background-color:#8da498 !important;
     color: white;
+    border: none;
 }
 
 .btn-danger {
