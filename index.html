@@ -137,6 +137,10 @@
 
         <!-- Filters -->
         <div class="col-lg-3 space-filter">
+          <div class="btn-space-filter">
+            <button id="btnApplyFilters" type="submit" class="btn btn-filter">Apply filters</button>
+          </div>
+
           <div class="card-filter-design">
             <form class="card-body">
 
@@ -144,7 +148,7 @@
               <div class="form-group card-body-design div-size-sort">
                 <label for="selectSortBy">Sort by :</label>
                 <select class="form-control" id="selectSortBy" multiple>
-                  <option value="deleteSorting" class="design-delete">Delete sorting</option>
+                  <option value="deleteSorting" class="design-delete" selected>Delete sorting</option>
                   <option value="higherPrices">Higher prices</option>
                   <option value="lowerPrices">Lower prices</option>
                   <option value="bestSeller">Best seller</option>
@@ -156,7 +160,7 @@
               <div class="form-group card-body-design ">
                 <label for="selectCategory">Categories :</label>
                 <select class="form-control" id="selectCategory" multiple>
-                  <option value="Uncategorized" class="design-delete">Uncategorized</option>
+                  <option value="Uncategorized" class="design-delete" selected>Uncategorized</option>
                   <option value="Sports">Sports</option>
                   <option value="Romance">Romance</option>
                   <option value="Action">Action</option>

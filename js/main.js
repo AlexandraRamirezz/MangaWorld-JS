@@ -193,13 +193,11 @@ function applyFilters() {
 
     let filteredList = comics_list.slice();
 
-    filteredList = filteredList.filter((comic) => comic.name.toLowerCase().includes(search));
-
     filteredList = filteredList.filter((comic) => {
         if (selectedCategories.includes("Uncategorized")) {
             return true;
         }
-        return selectedCategories.length === 0 || selectedCategories.includes(comic.category);
+        return comic.name.toLowerCase().includes(search) && (selectedCategories.length === 0 || selectedCategories.includes(comic.category));
     });
 
     filteredList = filteredList.filter((comic) => {
@@ -234,7 +232,7 @@ function applyCurrentFilters(comics) {
     const maximumPrice = parseFloat(document.getElementById('maximumPrice').value) || Number.MAX_VALUE;
 
     let filteredList = comics.filter((comic) => {
-        const categoryMatches = selectedCategories.length === 0 || selectedCategories.includes(comic.category);
+        const categoryMatches = selectedCategories.includes("Uncategorized") || selectedCategories.length === 0 || selectedCategories.includes(comic.category);
         const priceInRange = comic.price >= minimumPrice && comic.price <= maximumPrice;
 
         return categoryMatches && priceInRange;
@@ -253,6 +251,8 @@ function applyCurrentFilters(comics) {
         case "lowStock":
             filteredList = filteredList.filter(comic => comic.stock < 5);
             filteredList.sort((a, b) => a.stock - b.stock);
+            break;
+        case "deleteSorting":
             break;
     }
 

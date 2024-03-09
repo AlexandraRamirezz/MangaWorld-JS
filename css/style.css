@@ -140,8 +140,12 @@ main {
 }
 
 .form-control option:checked {
-    background-color: #bcc2c0 !important;
+    background-color: #bcc2c0;
     color: white;
+}
+
+.design-delete:checked {
+    background-color: #e3a7a2 !important;
 }
 
 .cart-design {
@@ -274,9 +278,8 @@ p {
 }
 
 .card-body {
-    padding: 0 20px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 0 15px;
+    padding-bottom: 1px;
     background: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
     border-top: 1px solid #b2aaaa7c;
@@ -302,14 +305,20 @@ p {
 }
 
 .btn-filter {
-    background-color: #8da498;
+    background-color: #ab9f9fe2;
+    color: white;
+}
+
+.btn-filter:hover {
+    background-color: #786259af;
     color: white;
 }
 
 .btn-space-filter {
     display: flex;
-    justify-content: center;
-    padding-bottom: 15px;
+    justify-content: right;
+    padding-top: 12px;
+    margin-right: 12px;
 }
 
 .card-body-design input {
@@ -318,6 +327,28 @@ p {
 
 .card-body-design select {
     margin-top: 10px;
+}
+
+.no-comics-box {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 2rem;
+    color: #878787;
+    text-align: center;
+}
+
+.no-comics-box p {
+    margin: 3rem 0;
+    font-size: 1.2rem;
+}
+
+.no-comics-box i {
+    color: #979797;
+    font-size: 2rem;
 }
 
 .modal-backdrop {
@@ -331,6 +362,17 @@ p {
 .cell-size {
     width: 100px;
     text-align: center;
+}
+
+.btnAddComic {
+    margin: 15px;
+    border: #8e7d7d solid 1px;
+    
+}
+
+.btnAddComic:hover {
+    background-color:#938484 !important;
+    color: white;
 }
 
 .btn-danger {
@@ -408,6 +450,12 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .btn-space-filter {
+        display: flex;
+        justify-content: center;
+        padding-top: 12px;
     }
 }
 
