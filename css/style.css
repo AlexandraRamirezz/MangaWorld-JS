@@ -99,13 +99,13 @@ main {
     color: #FAF3F0;
 }
 
-.btn-color-tercery {
+.btn-color-third {
     background-color: #ff9b92;
     color: #FAF3F0;
     margin-top: 1rem;
 }
 
-.btn-color-tercery:hover {
+.btn-color-third:hover {
     background-color: #d97371;
     color: #FAF3F0;
 }
