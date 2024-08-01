@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse our catalog to discover fascinating comics of Japanese origin. In order to support libraries and bookstores that promote this unique form of cultural expression, we offer a varied selection to spread the richness of Asian culture. Immerse yourself in our wide repertoire and support the spread of these captivating stories!">
+    <meta name="keywords" content="comics, mangas, libraries, bookstores">
+    <link rel="icon" href="./../favicon.ico" type="image/x-icon">
+    <title>MangaWorld | Contact us</title>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <!-- Google fonts: Josefin Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <!-- Google fonts: Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!-- Google fonts: Pacifico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid p-2">
+                <a class="navbar-brand px-4 logo" href="../index.html">
+                    <span>MangaWorld</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">COMICS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONTACT</a>
+                        </li>
+                    </ul>
+                    <div class="div-nav-buttons">
+                        <button class="btn btn-color-secondary me-3">LOGIN</button>
+                        <button class="btn btn-color-primary me-3">SIGN UP</button>
+                        <button id="btnModalShoppingCart" type="button" class="btn cart-design" disabled>
+                            <i id="cart-icon" class="fa-solid fa-cart-shopping me-2"></i>
+                            <span id="cartCount" class="badge-design">0</span>
+                        </button>
+                    </div>
+                    <div id="modalShoppingCart" class="modal fade" tabindex="-1" aria-hidden="true" aria-labelledby="modalShoppingCart">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><i class="fa-solid fa-cart-shopping"></i>
+                                        <h5 class="px-3">Shopping cart</h5>
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th class="cell-size-comic text-center">Comic</th>
+                                                <th class="text-center">Quantity</th>
+                                                <th class="cell-size">Price</th>
+                                                <th class="cell-size">Total</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="modalListComics">
+                                        </tbody>
+                                    </table>
+                                    <hr>
+                                    <h6 class="text-end px-5"> Total : S/ <span id="cartSum"></span></h6>
+                                    <hr>
+                                    <div id="discountInfo"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="btnClose" type="button" class="btn btn-color-secondary">Close</button>
+                                    <button id="btnConfirm" type="button" class="btn btn-color-primary">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-contact">
+            <div class="container-fluid">
+                <div class="row gap-5">
+                    <div class="col-lg-4 contactus-section">
+                    </div>
+                    <div class="col-lg-7 space-filte container-form-all">
+                        <div class="container-fluid container-form">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="fullname" class="form-label">Full name</label>
+                                    <input type="fullname" class="form-control" id="fullname" placeholder="Jhon Doe">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="example@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" placeholder="Message subject here">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="Write your message here..."></textarea>
+                                </div>
+                                <div class="d-flex justify-content-center gap-4">
+                                    <button type="reset" class="btn btn-color-secondary">Cancel</button>
+                                    <button type="submit" class="btn btn-color-primary">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer shadow p-5 blockcode">
+        <div class="d-flex flex-column mx-auto" style="width: 80%">
+            <div class="d-flex flex-wrap justify-content-between">
+                <div class="align-self-center">
+                    <div class="text-center">
+                        <a href="#"><img src="../favicon.ico" width="90" height="85" alt="Logo of the page called MangaWorld"></a>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-dark btn-flat p-2">
+                            <i class="fa-brands fa-facebook"></i>
+                        </button>
+                        <button class="btn btn-dark btn-flat p-2">
+                            <i class="fa-brands fa-twitter"></i>
+                        </button>
+                        <button class="btn btn-dark btn-flat p-2">
+                            <i class="fa-brands fa-instagram"></i>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <p class="h5 mb-4" style="font-weight: 600">MangaWorld</p>
+                    <ul class="p-0" style="list-style: none; cursor: pointer">
+                        <li class="my-2">
+                            <a class="text-light design-links" href="../index.html">Comics</a>
+                        </li>
+                        <li class="my-2">
+                            <a class="text-light design-links" href="aboutus.html">About us</a>
+                        </li>
+                        <li class="my-2">
+                            <a class="text-light design-links" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="h5 mb-4" style="font-weight: 600">Help</p>
+                    <ul class="p-0" style="list-style: none; cursor: pointer">
+                        <li class="my-2">
+                            <a class="text-light design-links" href="/">Support</a>
+                        </li>
+                        <li class="my-2">
+                            <a class="text-light design-links" href="/">Login</a>
+                        </li>
+                        <li class="my-2">
+                            <a class="text-light design-links" href="/">Sign up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <small class="text-center mt-5">&copy; MangaWorld, 2023. All rights reserved.</small>
+        </div>
+    </footer>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <!-- Toastify JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- JS -->
+    <script src="../js/Cart.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
