@@ -2,7 +2,7 @@
 
 MangaWorld is an online store for japanese comics that allows users to search or filter a list of comics, and add or remove comics from the shopping cart. The application uses a json-server for data management and JavaScript libraries.
 
-**Enlace de la aplicación:** [manga-world-js.vercel.app](https://manga-world-js.vercel.app)
+**Application link:** [manga-world-js.vercel.app](https://manga-world-js.vercel.app)
 
 ## 📝 Features
 ### 🎯 Comics
